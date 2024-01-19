@@ -1,0 +1,10 @@
+---
+interface Props {
+  src?: string;
+  text: string;
+}
+
+const { src = '/', text } = Astro.props;
+---
+
+<a class='transition hover:opacity-85' href={src}>{text}</a>

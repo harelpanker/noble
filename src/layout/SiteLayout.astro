@@ -1,0 +1,28 @@
+---
+import '@fontsource-variable/inter';
+
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+---
+
+<html lang='en' dir='ltr'>
+  <head>
+    <title>Zen</title>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+  </head>
+  <body
+    class='min-h-dvh antialiased w-full overflow-clip font-inter flex flex-col'>
+    <!-- header -->
+    <Header />
+    <div class='flex flex-col grow'>
+      <!-- main -->
+      <main class='relative z-10 grow'>
+        <slot />
+      </main>
+      <!-- footer -->
+      <Footer />
+    </div>
+  </body>
+</html>

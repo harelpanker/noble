@@ -1,0 +1,12 @@
+---
+interface Props {
+  text?: string;
+}
+
+const { text = 'Request Demo' } = Astro.props;
+---
+
+<button
+  class='text-sm p-3 text-white bg-black rounded transition hover:bg-black/85'>
+  {text}
+</button>
