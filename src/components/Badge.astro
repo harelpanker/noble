@@ -1,9 +1,15 @@
 ---
 interface Props {
   text: string;
+  bgColor?: string;
+  textLight?: boolean;
 }
 
-const { text } = Astro.props;
+const { text, bgColor = '#333333', textLight = true } = Astro.props;
 ---
 
-<div class='bg-[#333333] text-sm px-2 py-[5px] text-white'>{text}</div>
+<div
+  style={{ backgroundColor: bgColor }}
+  class={`${textLight ? 'text-white' : 'text-black'} text-sm px-2 py-[5px]`}>
+  {text}
+</div>
