@@ -2,12 +2,13 @@
 interface Props {
   text?: string;
   isSM?: boolean;
+  isWhite?: boolean;
 }
 
-const { text = 'Request Demo', isSM = false } = Astro.props;
+const { text = 'Request Demo', isSM = false, isWhite = false } = Astro.props;
 ---
 
 <button
-  class={`${isSM ? 'p-3 text-sm' : 'py-[.9rem] px-4 text-lg'} text-white bg-black rounded transition hover:bg-black/85`}>
+  class={`${isSM ? 'p-3 text-sm' : 'py-[.9rem] px-4 text-lg'} ${isWhite ? 'text-black bg-white hover:bg-white/85' : 'text-white bg-black hover:bg-black/85'} rounded transition`}>
   {text}
 </button>
